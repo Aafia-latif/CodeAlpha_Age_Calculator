@@ -1,0 +1,132 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🌈 Animated Gradient Background */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+  transition: background 2s ease-in-out;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ✨ Glass Container */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 340px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  animation: popUp 1s ease forwards;
+  opacity: 0;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.container p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Input */
+.input-group input[type="date"] {
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Button */
+button {
+  margin-top: 1.3rem;
+  padding: 0.75rem 1.8rem;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Result */
+#result {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes popUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade 0.6s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
